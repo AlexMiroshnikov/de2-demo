@@ -1,2 +1,2 @@
-# de2-demo.guthub.io
+# de2-demo
 DE2 demo site stub
