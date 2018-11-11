@@ -1,7 +1,7 @@
 {
   "name": "DE2 Demo",
   "short_name": "DE2 Demo",
-  "start_url": "index.html",
+  "start_url": "/de2-demo/index.html",
   "display": "standalone",
   "theme_color": "#333333",
   "background_color": "#ffffff",
