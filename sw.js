@@ -1,4 +1,4 @@
-const VERSION = '0.0.1-dev-1';
+const VERSION = '0.0.1-dev-2';
 
 const assetsToCache = {
     statics: ['index.html', 'dist/bundle.js', 'css/bootstrap.min.css', 'favicon.ico'],
@@ -42,8 +42,18 @@ const cacheStatics = req => {
     });
 };
 
+const pregs = {};
+
+const shouldUrlBeCachedByCache = (url, cacheSection) => {
+    if (!pregs[cacheSection]) {
+        pregs[cacheSection] = new RegExp(`(?:${assetsToCache[cacheSection].join('|')})$`);
+    }
+
+    return pregs[cacheSection].test(url);
+};
+
 self.addEventListener('fetch', e => {
-    if (e.request.url.match(location.origin)) {
+    if (shouldUrlBeCachedByCache(e.request.url, 'statics')) {
         e.respondWith(cacheStatics(e.request));
     }
 });
