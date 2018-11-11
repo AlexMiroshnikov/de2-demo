@@ -1,4 +1,4 @@
-const VERSION = '0.0.1-dev-7';
+const VERSION = '0.0.1-dev-8';
 
 const assetsToCache = {
     statics: ['index.html', 'dist/bundle.js', 'css/bootstrap.min.css', 'favicon.ico', 'manifest.json'],
