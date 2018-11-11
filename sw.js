@@ -1,4 +1,4 @@
-const VERSION = '0.0.1-dev-3';
+const VERSION = '0.0.1-dev-4';
 
 const assetsToCache = {
     statics: ['index.html', 'dist/bundle.js', 'css/bootstrap.min.css', 'favicon.ico'],
@@ -49,13 +49,17 @@ const shouldUrlBeCachedByCache = (url, cacheSection) => {
         pregs[cacheSection] = new RegExp(`(?:${assetsToCache[cacheSection].join('|')})$`);
     }
 
+    /*
     console.log('Test preg');
     console.log(pregs[cacheSection]);
     console.log('against url', url);
+    //*/
 
     const result = pregs[cacheSection].test(url);
+    /*
     console.log('result is');
     console.log(result);
+    //*/
     return result;
 };
 
